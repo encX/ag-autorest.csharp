@@ -26,15 +26,15 @@ eolConverter $INPUT_PATH
 
 if [ "$USE_OPENAPI_V3" = "true" ]; then
   if [ "$USE_DATETIMEOFFSET" = "true" ]; then
-    autorest --v3 --use=/app --csharp --output-folder=$OUTPUT_PATH --namespace=$NAMESPACE --input-file=$INPUT_PATH --add-credentials --use-datetimeoffset --version=3.0.6274 --debug
+    autorest --v3 --use=/app --use=@microsoft.azure/autorest.csharp@2.3.91 --output-folder=$OUTPUT_PATH --namespace=$NAMESPACE --input-file=$INPUT_PATH --add-credentials --use-datetimeoffset --version=3.0.6274 --debug
   else
-    autorest --v3 --use=/app --csharp --output-folder=$OUTPUT_PATH --namespace=$NAMESPACE --input-file=$INPUT_PATH --add-credentials --version=3.0.6274 --debug
+    autorest --v3 --use=/app --use=@microsoft.azure/autorest.csharp@2.3.91 --output-folder=$OUTPUT_PATH --namespace=$NAMESPACE --input-file=$INPUT_PATH --add-credentials --version=3.0.6274 --debug
   fi
 else
   if [ "$USE_DATETIMEOFFSET" = "true" ]; then
-    autorest --use=/app --csharp --output-folder=$OUTPUT_PATH --namespace=$NAMESPACE --input-file=$INPUT_PATH --add-credentials --use-datetimeoffset --legacy --debug
+    autorest --use=/app --use=@microsoft.azure/autorest.csharp@2.3.91 --output-folder=$OUTPUT_PATH --namespace=$NAMESPACE --input-file=$INPUT_PATH --add-credentials --use-datetimeoffset --legacy --debug
   else
-    autorest --use=/app --csharp --output-folder=$OUTPUT_PATH --namespace=$NAMESPACE --input-file=$INPUT_PATH --add-credentials --legacy --debug
+    autorest --use=/app --use=@microsoft.azure/autorest.csharp@2.3.91 --output-folder=$OUTPUT_PATH --namespace=$NAMESPACE --input-file=$INPUT_PATH --add-credentials --legacy --debug
   fi
 fi
 
